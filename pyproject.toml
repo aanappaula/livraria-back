@@ -1,0 +1,19 @@
+[tool.pdm]
+
+[project]
+name = "livrarias-anas"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Anas 3info1", email = "aninha10.desouza@gmail.com"},
+]
+dependencies = [
+    "django>=4.1.7",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
