@@ -6,13 +6,15 @@ class Categoria(models.Model):
 
     def __str__(self):
         return f"{self.descricao} ({self.id})"
-    
+
+   
 class Editora(models.Model):
     nome = models.CharField(max_length=100)
-    site = models.URLField(null=True, blank=True) # esse campo é opcional
+    site = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.nome
+
 
 class Autor(models.Model):
     nome = models.CharField(max_length=225)
@@ -23,6 +25,7 @@ class Autor(models.Model):
 
     class Meta:
         verbose_name_plural = "Autores"
+
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=225)
