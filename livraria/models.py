@@ -39,6 +39,5 @@ class Livro(models.Model):
     autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
-        return f"Livro:{self.titulo} - Preço:{self.quantidade}"
-
+        return f"Livro:{self.titulo} - Preço: {self.preco}"
 
