@@ -1,3 +1,5 @@
+from django.db import models 
+
 class Autor(models.Model):
     nome = models.CharField(max_length=225)
     email = models.EmailField(null=True, blank=True)
