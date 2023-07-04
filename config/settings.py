@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt',
     'rest_framework',
+    'usuario',
     'livraria',
 ]
 
@@ -134,3 +135,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 #         "rest_framework_simplejwt.authentication.JWTAuthentication",
 #     ],
 # }
+
+AUTH_USER_MODEL = "usuario.Usuario"
