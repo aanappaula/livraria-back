@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from livraria.models import Livro
-from livraria.serializers import (LivroSerializer, LivroDetailSerializer)
+from livraria.serializers import LivroDetailSerializer, LivroSerializer
 
 
 class LivroViewSet(ModelViewSet):
@@ -13,4 +13,3 @@ class LivroViewSet(ModelViewSet):
         if self.action in ["list", "retrieve"]:
             return LivroDetailSerializer
         return LivroSerializer
-    

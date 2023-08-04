@@ -8,4 +8,3 @@ class AutorViewSet(ModelViewSet):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializer
     # permission_classes = [IsAuthenticated]
-  
