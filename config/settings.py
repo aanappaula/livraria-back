@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "usuario",
     "uploader",
     "django_extensions",
+    "drf_spectacular",
     "livraria",
 ]
 
@@ -132,12 +133,19 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# REST_FRAMEWORK = {
-#     "DEFAULT_PERMISSION_CLASSES": [
-#         "rest_framework.permissions.DjangoModelPermissions",
-#         "rest_framework_simplejwt.authentication.JWTAuthentication",
-#     ],
-# }
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    # "DEFAULT_PERMISSION_CLASSES": [
+    #     "rest_framework.permissions.DjangoModelPermissions",
+    #     "rest_framework_simplejwt.authentication.JWTAuthentication",
+    # ],
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Livraria API",
+    "DESCRIPTION": "API para gerenciamento de livraria, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
 
 AUTH_USER_MODEL = "usuario.Usuario"
 
