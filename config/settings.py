@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "usuario",
     "uploader",
+    "django_extensions",
     "livraria",
 ]
 
