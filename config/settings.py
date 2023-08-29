@@ -11,19 +11,24 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+
+from dotenv import load_dotenv
+
 from pathlib import Path
+
+load_dotenv()
+
+MODE = os.getenv("MODE")
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = os.getenv("DEBUG", "False")
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-=(atv2tjl@78sxwf(n3zib(%lt81#t+(x*1(%cszib*20+3gsd"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -153,3 +158,7 @@ MEDIA_URL = "http://localhost:8000/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
+
+if MODE == "PRODUCTION":
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
