@@ -25,5 +25,13 @@ class CompraSerializer(ModelSerializer):
         fields = ("id", "usuario", "status", "total", "itens")
         
 
+class CriarEditarCompraSerializer(ModelSerializer):
+    itens = ItensCompraSerializer(many=True)
+
+    class Meta:
+        model = Compra
+        fields = ("usuario", "itens")
+
+
 
 
