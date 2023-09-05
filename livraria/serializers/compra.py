@@ -15,7 +15,6 @@ class ItensCompraSerializer(ModelSerializer):
         depth = 2
            
 
-
 class CompraSerializer(ModelSerializer):
     usuario = CharField(source="usuario.email", read_only=True)
     status = CharField(source="get_status_display", read_only=True)
@@ -23,7 +22,7 @@ class CompraSerializer(ModelSerializer):
 
     class Meta:
         model = Compra
-        fields = "__all__"
+        fields = ("id", "usuario", "status", "total", "itens")
         
 
 
